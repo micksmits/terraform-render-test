@@ -1,0 +1,6 @@
+Example .env
+```
+RENDER_API_KEY=
+RENDER_EMAIL=
+TF_LOG=DEBUG
+```
