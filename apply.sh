@@ -13,6 +13,6 @@ while read line; do
   export "$variable=$value"
 done < "$file_name"
 
-rm -rf .terraform .terraform.lock.hcl terradform.tfstate*
+rm -rf .terraform .terraform.lock.hcl terraform.tfstate*
 terraform init
 terraform apply
