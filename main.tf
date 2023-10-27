@@ -19,3 +19,8 @@ resource "render_service" "client" {
     publish_path  = "out"
   }
 }
+
+resource "render_service_custom_domain" "domain" {
+  service_id = render_service.client.id
+  domain_name = "test.primio.app"
+}
