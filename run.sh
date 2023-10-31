@@ -7,12 +7,16 @@ if [ ! -f "$file_name" ]; then
   exit 1
 fi
 
-while read line; do
+while read -r line; do
   variable="${line%=*}"
   value="${line#*=}"
   export "$variable=$value"
 done < "$file_name"
 
-rm -rf .terraform .terraform.lock.hcl terraform.tfstate*
+#rm -rf .terraform .terraform.lock.hcl terraform.tfstate*
+#terraform init
+
+rm -rf .terraform.lock.hcl
 terraform init
+
 terraform apply
